@@ -28,7 +28,7 @@ export default class reactComponentsTemplate extends React.Component {
 
   _playVideo() {
     this.setState({
-      hasLoad:true
+      hasLoad: true
     });
     const {source} = this.props;
     document.getElementById('dcSource').src = source;
@@ -36,21 +36,23 @@ export default class reactComponentsTemplate extends React.Component {
     document.getElementById('dcVideo').play();
     setTimeout(() => {
       this.setState({
-        hasLoad:false
+        hasLoad: false
       });
     }, 500);
   }
 
   render() {
-    const {className}=this.props;
-    const {hasLoad}=this.state;
+    const {className} = this.props;
+    const {hasLoad} = this.state;
     return (
-      <div className={classNames('react-video-container',className)}>
-        <video hidden id="dcVideo" preload="auto" controls="controls">
+      <div className={classNames('react-video-container', className)}>
+        <video id="dcVideo" className="dc-video" preload="auto" controls="controls">
           <source id="dcSource" src="" type="video/mp4"/>
         </video>
         {
-          hasLoad&&<div className="video-play loading"/>
+          hasLoad && <div className="video-play loading">
+            <img src="http://zhulogic-formal.oss-cn-hangzhou.aliyuncs.com/market_icon/loading2.gif" alt=""/>
+          </div>
         }
 
       </div>
