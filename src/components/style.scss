@@ -1,0 +1,50 @@
+.react-video-container {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .video {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    &-play {
+      width: 1.98rem;
+      height: 1.98rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      &.loading {
+        background-image: url("http://zhulogic-formal.oss-cn-hangzhou.aliyuncs.com/market_icon/loading2.gif");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+    &[data-position='middle'] {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }
+    &[data-position='right-bottom'] {
+      position: absolute;
+      z-index: 2;
+      bottom: .2rem;
+      right: .2rem;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: -.2rem;
+      right: -.2rem;
+      bottom: -.2rem;
+      left: -.2rem;
+    }
+  }
+}
+
